@@ -1,0 +1,17 @@
+\documentclass[tikz,border=3pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=12cm,height=8cm,xmode=log,ymode=log,xlabel={Training time [s]},ylabel={Outlet MSE},title={Speed-Accuracy Tradeoff},grid=both,legend pos=north west]
+\addplot+[only marks, mark=*, mark options={fill=blue}, color=blue] coordinates {(19.4493,1.438114e-04) (21.9362,1.979574e-04) (24.6817,1.455222e-04)};
+\addlegendentry{PINN}
+\addplot+[only marks, mark=x, draw=blue, mark options={scale=1.2, thick}, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {(22.0224,1.624304e-04) +- (2.6173,3.077921e-05)};
+\addlegendentry{PINN mean ± std}
+\addplot+[only marks, mark=square*, mark options={fill=red}, color=red] coordinates {(15.2788,1.081219e-04) (19.3172,1.180988e-04) (18.0112,9.095608e-05)};
+\addlegendentry{MR-PINN}
+\addplot+[only marks, mark=x, draw=red, mark options={scale=1.2, thick}, error bars/.cd, x dir=both, x explicit, y dir=both, y explicit] coordinates {(17.5358,1.057256e-04) +- (2.0607,1.372910e-05)};
+\addlegendentry{MR-PINN mean ± std}
+\end{axis}
+\end{tikzpicture}
+\end{document}

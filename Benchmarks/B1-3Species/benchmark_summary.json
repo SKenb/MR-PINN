@@ -1,0 +1,228 @@
+{
+  "PINN": {
+    "runs": 3,
+    "train_time_s": {
+      "mean": 22.022405722003896,
+      "std": 2.617268351709722,
+      "min": 19.44929216800665,
+      "max": 24.68170012999326
+    },
+    "epochs_used": {
+      "mean": 2250.0,
+      "std": 0.0,
+      "min": 2250.0,
+      "max": 2250.0
+    },
+    "outlet_mse": {
+      "mean": 0.00016243035497609526,
+      "std": 3.0779212672306596e-05,
+      "min": 0.00014381144137587398,
+      "max": 0.0001979574008146301
+    },
+    "spatial_mse": {
+      "mean": 0.0020581521869947514,
+      "std": 9.799674494489393e-05,
+      "min": 0.001954735955223441,
+      "max": 0.00214963685721159
+    },
+    "rate_mse": {
+      "mean": 0.001021147317563494,
+      "std": 5.488412340201367e-05,
+      "min": 0.0009623866062611341,
+      "max": 0.0010710861533880234
+    },
+    "best_loss": {
+      "mean": 0.0005450375028885901,
+      "std": 6.222280281849182e-05,
+      "min": 0.0005076141096651554,
+      "max": 0.0006168650579638779
+    }
+  },
+  "rPINN": {
+    "runs": 3,
+    "train_time_s": {
+      "mean": 17.535752224668006,
+      "std": 2.0607460143271386,
+      "min": 15.278844051004853,
+      "max": 19.31723636999959
+    },
+    "epochs_used": {
+      "mean": 2250.0,
+      "std": 0.0,
+      "min": 2250.0,
+      "max": 2250.0
+    },
+    "outlet_mse": {
+      "mean": 0.0001057255722116679,
+      "std": 1.3729097773757637e-05,
+      "min": 9.095608402276412e-05,
+      "max": 0.00011809878196800128
+    },
+    "spatial_mse": {
+      "mean": 0.001117574245048066,
+      "std": 4.779234229705825e-05,
+      "min": 0.0010744547471404076,
+      "max": 0.001168960821814835
+    },
+    "rate_mse": {
+      "mean": 0.000725041589854906,
+      "std": 2.3322784884925718e-05,
+      "min": 0.0007023806101642549,
+      "max": 0.0007489741547033191
+    },
+    "best_loss": {
+      "mean": 0.00024250585799260685,
+      "std": 2.2027273848961165e-05,
+      "min": 0.00021731284505221993,
+      "max": 0.00025813301908783615
+    }
+  },
+  "stat_tests": {
+    "train_time_s": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 22.022405722003896,
+      "mean_rpinn": 17.535752224668006,
+      "mean_diff_pinn_minus_rpinn": 4.48665349733589,
+      "relative_change_rpinn_vs_pinn_percent": -20.373130683234155,
+      "t_stat": 2.332839763501809,
+      "df": 3.791317757773843,
+      "p_value": 0.08361111139797009,
+      "p_method": "scipy_t",
+      "cohens_d": 1.9047556907514722,
+      "hedges_g": 1.5238045526011779,
+      "ci95_diff": [
+        -0.9711034696480558,
+        9.944410464319837
+      ]
+    },
+    "epochs_used": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 2250.0,
+      "mean_rpinn": 2250.0,
+      "mean_diff_pinn_minus_rpinn": 0.0,
+      "relative_change_rpinn_vs_pinn_percent": 0.0,
+      "t_stat": 0.0,
+      "df": Infinity,
+      "p_value": 1.0,
+      "p_method": "scipy_t",
+      "cohens_d": 0.0,
+      "hedges_g": 0.0,
+      "ci95_diff": [
+        0.0,
+        0.0
+      ]
+    },
+    "outlet_mse": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.00016243035497609526,
+      "mean_rpinn": 0.0001057255722116679,
+      "mean_diff_pinn_minus_rpinn": 5.6704782764427364e-05,
+      "relative_change_rpinn_vs_pinn_percent": -34.910212917266946,
+      "t_stat": 2.9142056668181104,
+      "df": 2.765541416080556,
+      "p_value": 0.0682083934959096,
+      "p_method": "scipy_t",
+      "cohens_d": 2.3794389630771913,
+      "hedges_g": 1.9035511704617532,
+      "ci95_diff": [
+        -8.297979323990194e-06,
+        0.00012170754485284492
+      ]
+    },
+    "spatial_mse": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.0020581521869947514,
+      "mean_rpinn": 0.001117574245048066,
+      "mean_diff_pinn_minus_rpinn": 0.0009405779419466855,
+      "relative_change_rpinn_vs_pinn_percent": -45.700116244566324,
+      "t_stat": 14.942067706686792,
+      "df": 2.900440500894307,
+      "p_value": 0.0007795218533345181,
+      "p_method": "scipy_t",
+      "cohens_d": 12.200147194500355,
+      "hedges_g": 9.760117755600284,
+      "ci95_diff": [
+        0.0007363014225262108,
+        0.0011448544613671602
+      ]
+    },
+    "rate_mse": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.001021147317563494,
+      "mean_rpinn": 0.000725041589854906,
+      "mean_diff_pinn_minus_rpinn": 0.000296105727708588,
+      "relative_change_rpinn_vs_pinn_percent": -28.99735646518764,
+      "t_stat": 8.600291439668213,
+      "df": 2.6995061260507445,
+      "p_value": 0.004894720403758761,
+      "p_method": "scipy_t",
+      "cohens_d": 7.022108555471085,
+      "hedges_g": 5.617686844376869,
+      "ci95_diff": [
+        0.00017930113013441064,
+        0.0004129103252827654
+      ]
+    },
+    "best_loss": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.0005450375028885901,
+      "mean_rpinn": 0.00024250585799260685,
+      "mean_diff_pinn_minus_rpinn": 0.0003025316448959833,
+      "relative_change_rpinn_vs_pinn_percent": -55.50657400502275,
+      "t_stat": 7.938596663569457,
+      "df": 2.49353125148692,
+      "p_value": 0.007867473702698604,
+      "p_method": "scipy_t",
+      "cohens_d": 6.4818370331687145,
+      "hedges_g": 5.185469626534972,
+      "ci95_diff": [
+        0.00016605209700645512,
+        0.0004390111927855114
+      ]
+    }
+  },
+  "config": {
+    "runs": 3,
+    "base_seed": 0,
+    "device": "cpu",
+    "num_delays": 30,
+    "reactor_length": 5.0,
+    "learning_rate": 0.001,
+    "phys_weight": 0.1,
+    "loss_mode": "strict_boundary_phys",
+    "pinn_epochs": 2250,
+    "pinn_threshold": 5e-05,
+    "pinn_patience": 120,
+    "rpinn_schedule": [
+      4,
+      20,
+      70,
+      100
+    ],
+    "rpinn_epochs": [
+      250,
+      400,
+      700,
+      900
+    ],
+    "rpinn_thresholds": [
+      0.0005,
+      0.0002,
+      0.0001,
+      5e-05
+    ],
+    "rpinn_patience": 60,
+    "min_epochs_before_stop": 20,
+    "use_trainable_params": true,
+    "fixed_dispersion": 0.001,
+    "fixed_reaction_rate": 0.05,
+    "data_path": "Python/Data/flowReactorData_3species.pkl",
+    "true_k": 0.08
+  }
+}

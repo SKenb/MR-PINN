@@ -1,0 +1,85 @@
+{
+  "rPINN": {
+    "runs": 3,
+    "train_time_s": {
+      "mean": 3.079643538328431,
+      "std": 0.15646767532007844,
+      "min": 2.96604712298722,
+      "max": 3.258113534990116
+    },
+    "epochs_used": {
+      "mean": 1782.6666666666667,
+      "std": 51.62686639079824,
+      "min": 1748.0,
+      "max": 1842.0
+    },
+    "outlet_mse": {
+      "mean": 1.7294605261971203e-06,
+      "std": 2.3733433607476188e-07,
+      "min": 1.4643575241279905e-06,
+      "max": 1.9221608908992494e-06
+    },
+    "spatial_mse": {
+      "mean": 0.0007343308340447644,
+      "std": 7.240077790386961e-06,
+      "min": 0.000726021477021277,
+      "max": 0.0007392821717076004
+    },
+    "best_loss": {
+      "mean": 1.9957831682404503e-05,
+      "std": 2.2561452652043132e-08,
+      "min": 1.994041849684436e-05,
+      "max": 1.9983319361926988e-05
+    },
+    "reaction_rate": {
+      "mean": 0.2598966459433238,
+      "std": 0.003463094372404591,
+      "min": 0.2559650242328644,
+      "max": 0.2624947428703308
+    },
+    "reaction_rate_abs_error": {
+      "mean": 0.00989664594332377,
+      "std": 0.0034630943724045906,
+      "min": 0.00596502423286438,
+      "max": 0.01249474287033081
+    }
+  },
+  "config": {
+    "runs": 3,
+    "base_seed": 0,
+    "device": "cpu",
+    "num_delays": 30,
+    "reactor_length": 5.0,
+    "learning_rate": 0.001,
+    "phys_weight": 0.1,
+    "loss_mode": "strict_boundary_phys",
+    "pinn_epochs": 2200,
+    "pinn_threshold": 2e-05,
+    "pinn_patience": 100,
+    "rpinn_schedule": [
+      4,
+      20,
+      70,
+      100
+    ],
+    "rpinn_epochs": [
+      300,
+      400,
+      500,
+      1000
+    ],
+    "rpinn_thresholds": [
+      2e-05,
+      2e-05,
+      2e-05,
+      2e-05
+    ],
+    "rpinn_patience": 100,
+    "min_epochs_before_stop": 20,
+    "use_trainable_params": true,
+    "fixed_dispersion": 0.001,
+    "fixed_reaction_rate": 0.25,
+    "data_path": "Python/Data/flowReactorData.pkl",
+    "interpolation_method": "spline"
+  }
+}

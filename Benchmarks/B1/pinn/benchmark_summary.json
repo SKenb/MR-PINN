@@ -1,0 +1,239 @@
+{
+  "PINN": {
+    "runs": 3,
+    "train_time_s": {
+      "mean": 3.9370372326666256,
+      "std": 0.17169282883347367,
+      "min": 3.831155555002624,
+      "max": 4.135133953997865
+    },
+    "epochs_used": {
+      "mean": 2200.0,
+      "std": 0.0,
+      "min": 2200.0,
+      "max": 2200.0
+    },
+    "outlet_mse": {
+      "mean": 6.2594613154942635e-06,
+      "std": 2.1989157725242743e-06,
+      "min": 4.153946065343916e-06,
+      "max": 8.541175702703185e-06
+    },
+    "spatial_mse": {
+      "mean": 0.002728949145724376,
+      "std": 0.00041323259321701016,
+      "min": 0.0024268191773444414,
+      "max": 0.0031998567283153534
+    },
+    "best_loss": {
+      "mean": 0.00018071187272047004,
+      "std": 2.371973055441862e-05,
+      "min": 0.00016605682321824133,
+      "max": 0.00020807805412914604
+    },
+    "reaction_rate": {
+      "mean": 0.32761916518211365,
+      "std": 0.011575503828396583,
+      "min": 0.3187043070793152,
+      "max": 0.3407013416290283
+    },
+    "reaction_rate_abs_error": {
+      "mean": 0.07761916518211365,
+      "std": 0.011575503828396583,
+      "min": 0.06870430707931519,
+      "max": 0.09070134162902832
+    }
+  },
+  "rPINN": {
+    "runs": 3,
+    "train_time_s": {
+      "mean": 3.04794179633609,
+      "std": 0.06494357661375572,
+      "min": 2.991394919998129,
+      "max": 3.1188709050038597
+    },
+    "epochs_used": {
+      "mean": 1801.6666666666667,
+      "std": 80.82903768654761,
+      "min": 1715.0,
+      "max": 1875.0
+    },
+    "outlet_mse": {
+      "mean": 1.8706643913901644e-06,
+      "std": 8.026363086843438e-08,
+      "min": 1.7912402654474135e-06,
+      "max": 1.9517419787007384e-06
+    },
+    "spatial_mse": {
+      "mean": 0.0007469060171085099,
+      "std": 9.1016065053428e-06,
+      "min": 0.0007367259240709245,
+      "max": 0.0007542573730461299
+    },
+    "best_loss": {
+      "mean": 1.996422179217916e-05,
+      "std": 2.730498553346174e-08,
+      "min": 1.993278601730708e-05,
+      "max": 1.998203879338689e-05
+    },
+    "reaction_rate": {
+      "mean": 0.2593899071216583,
+      "std": 0.005202793300898938,
+      "min": 0.2544691562652588,
+      "max": 0.26483502984046936
+    },
+    "reaction_rate_abs_error": {
+      "mean": 0.009389907121658325,
+      "std": 0.005202793300898938,
+      "min": 0.004469156265258789,
+      "max": 0.01483502984046936
+    }
+  },
+  "stat_tests": {
+    "train_time_s": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 3.9370372326666256,
+      "mean_rpinn": 3.04794179633609,
+      "mean_diff_pinn_minus_rpinn": 0.8890954363305354,
+      "relative_change_rpinn_vs_pinn_percent": -22.582855680242965,
+      "t_stat": 8.389174295056266,
+      "df": 2.5608251415462036,
+      "p_value": 0.006282935809331789,
+      "p_method": "scipy_t",
+      "cohens_d": 6.849732128720208,
+      "hedges_g": 5.479785702976167,
+      "ci95_diff": [
+        0.51661002328725,
+        1.261580849373821
+      ]
+    },
+    "epochs_used": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 2200.0,
+      "mean_rpinn": 1801.6666666666667,
+      "mean_diff_pinn_minus_rpinn": 398.33333333333326,
+      "relative_change_rpinn_vs_pinn_percent": -18.106060606060602,
+      "t_stat": 8.535714285714285,
+      "df": 2.0,
+      "p_value": 0.013448988654059581,
+      "p_method": "scipy_t",
+      "cohens_d": 6.96938153006166,
+      "hedges_g": 5.575505224049328,
+      "ci95_diff": [
+        197.5428726116917,
+        599.1237940549748
+      ]
+    },
+    "outlet_mse": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 6.2594613154942635e-06,
+      "mean_rpinn": 1.8706643913901644e-06,
+      "mean_diff_pinn_minus_rpinn": 4.388796924104099e-06,
+      "relative_change_rpinn_vs_pinn_percent": -70.11461055347297,
+      "t_stat": 3.454684519169509,
+      "df": 2.005329416171265,
+      "p_value": 0.07425996100853668,
+      "p_method": "scipy_t",
+      "cohens_d": 2.8207380980858496,
+      "hedges_g": 2.25659047846868,
+      "ci95_diff": [
+        -1.0633531474132778e-06,
+        9.840946995621476e-06
+      ]
+    },
+    "spatial_mse": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.002728949145724376,
+      "mean_rpinn": 0.0007469060171085099,
+      "mean_diff_pinn_minus_rpinn": 0.0019820431286158664,
+      "relative_change_rpinn_vs_pinn_percent": -72.63026985025586,
+      "t_stat": 8.305654144020771,
+      "df": 2.0019404696869927,
+      "p_value": 0.014147495943344057,
+      "p_method": "scipy_t",
+      "cohens_d": 6.781538210961158,
+      "hedges_g": 5.425230568768927,
+      "ci95_diff": [
+        0.0009562206453192724,
+        0.00300786561191246
+      ]
+    },
+    "best_loss": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.00018071187272047004,
+      "mean_rpinn": 1.996422179217916e-05,
+      "mean_diff_pinn_minus_rpinn": 0.00016074765092829088,
+      "relative_change_rpinn_vs_pinn_percent": -88.95245702917353,
+      "t_stat": 11.738030223009922,
+      "df": 2.0000053005921643,
+      "p_value": 0.007179735518634149,
+      "p_method": "scipy_t",
+      "cohens_d": 9.584061543913915,
+      "hedges_g": 7.667249235131132,
+      "ci95_diff": [
+        0.00010182468435431128,
+        0.0002196706175022705
+      ]
+    },
+    "reaction_rate_abs_error": {
+      "n_pinn": 3,
+      "n_rpinn": 3,
+      "mean_pinn": 0.07761916518211365,
+      "mean_rpinn": 0.009389907121658325,
+      "mean_diff_pinn_minus_rpinn": 0.06822925806045532,
+      "relative_change_rpinn_vs_pinn_percent": -87.9025919698733,
+      "t_stat": 9.311842303911865,
+      "df": 2.776392062144143,
+      "p_value": 0.0035646565178844357,
+      "p_method": "scipy_t",
+      "cohens_d": 7.6030874032821965,
+      "hedges_g": 6.082469922625758,
+      "ci95_diff": [
+        0.04381170063967879,
+        0.09264681548123185
+      ]
+    }
+  },
+  "config": {
+    "runs": 3,
+    "base_seed": 0,
+    "device": "cpu",
+    "num_delays": 30,
+    "reactor_length": 5.0,
+    "learning_rate": 0.001,
+    "phys_weight": 0.1,
+    "loss_mode": "strict_boundary_phys",
+    "pinn_epochs": 2200,
+    "pinn_threshold": 2e-05,
+    "pinn_patience": 100,
+    "rpinn_schedule": [
+      4,
+      20,
+      70,
+      100
+    ],
+    "rpinn_epochs": [
+      300,
+      400,
+      500,
+      1000
+    ],
+    "rpinn_thresholds": [
+      2e-05,
+      2e-05,
+      2e-05,
+      2e-05
+    ],
+    "rpinn_patience": 100,
+    "min_epochs_before_stop": 20,
+    "use_trainable_params": true,
+    "fixed_dispersion": 0.001,
+    "fixed_reaction_rate": 0.25,
+    "data_path": "Python/Data/flowReactorData.pkl"
+  }
+}

@@ -1,0 +1,9 @@
+Interpolation method: nearest
+Runs: 3
+Train time [s]: mean=4.212, std=0.447, min=3.774, max=4.666
+Epochs used: mean=2200.000, std=0.000, min=2200.000, max=2200.000
+Outlet MSE: mean=1.808812e-06, std=1.662437e-07, min=1.709118e-06, max=2.000725e-06
+Spatial MSE: mean=7.596041e-04, std=1.642307e-05, min=7.407183e-04, max=7.705341e-04
+Best loss: mean=2.266997e-05, std=2.449984e-06, min=2.022268e-05, max=2.512264e-05
+Reaction rate: mean=0.25171, std=0.000120427, min=0.251616, max=0.251846
+Reaction-rate abs. error: mean=1.710206e-03, std=1.204272e-04, min=1.616120e-03, max=1.845926e-03

@@ -1,0 +1,25 @@
+\documentclass[tikz,border=3pt]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1, horizontal sep=1.35cm}, width=5.7cm, height=5.8cm]
+\nextgroupplot[title={Training Time [s]}, xtick={1,2}, xticklabels={PINN,MR-PINN}, grid=both, ymode=log, ylabel={Value}]
+\addplot+[only marks, mark=*, mark options={fill=blue}, color=blue, opacity=0.55] coordinates {(0.92,19.4493) (1,21.9362) (1.08,24.6817)};
+\addplot+[only marks, mark=x, draw=blue, mark options={scale=1.2, thick}, error bars/.cd, y dir=both, y explicit] coordinates {(1,22.0224) +- (0,2.6173)};
+\addplot+[only marks, mark=square*, mark options={fill=red}, color=red, opacity=0.55] coordinates {(1.92,15.2788) (2,19.3172) (2.08,18.0112)};
+\addplot+[only marks, mark=x, draw=red, mark options={scale=1.2, thick}, error bars/.cd, y dir=both, y explicit] coordinates {(2,17.5358) +- (0,2.0607)};
+\nextgroupplot[title={Outlet MSE}, xtick={1,2}, xticklabels={PINN,MR-PINN}, grid=both, ymode=log, ]
+\addplot+[only marks, mark=*, mark options={fill=blue}, color=blue, opacity=0.55] coordinates {(0.92,1.438114e-04) (1,1.979574e-04) (1.08,1.455222e-04)};
+\addplot+[only marks, mark=x, draw=blue, mark options={scale=1.2, thick}, error bars/.cd, y dir=both, y explicit] coordinates {(1,1.624304e-04) +- (0,3.077921e-05)};
+\addplot+[only marks, mark=square*, mark options={fill=red}, color=red, opacity=0.55] coordinates {(1.92,1.081219e-04) (2,1.180988e-04) (2.08,9.095608e-05)};
+\addplot+[only marks, mark=x, draw=red, mark options={scale=1.2, thick}, error bars/.cd, y dir=both, y explicit] coordinates {(2,1.057256e-04) +- (0,1.372910e-05)};
+\nextgroupplot[title={Spatial MSE}, xtick={1,2}, xticklabels={PINN,MR-PINN}, grid=both, ymode=log, ]
+\addplot+[only marks, mark=*, mark options={fill=blue}, color=blue, opacity=0.55] coordinates {(0.92,0.00207) (1,0.00215) (1.08,0.001955)};
+\addplot+[only marks, mark=x, draw=blue, mark options={scale=1.2, thick}, error bars/.cd, y dir=both, y explicit] coordinates {(1,0.002058) +- (0,9.799674e-05)};
+\addplot+[only marks, mark=square*, mark options={fill=red}, color=red, opacity=0.55] coordinates {(1.92,0.001169) (2,0.001109) (2.08,0.001074)};
+\addplot+[only marks, mark=x, draw=red, mark options={scale=1.2, thick}, error bars/.cd, y dir=both, y explicit] coordinates {(2,0.001118) +- (0,4.779234e-05)};
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

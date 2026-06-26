@@ -1,0 +1,54 @@
+% Standalone TikZ/PDF figure for four-method convergence
+\documentclass[tikz,border=3pt]{standalone}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.18, every axis plot/.append style={line width=1.2pt}}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    width=15.5cm,
+    height=8.2cm,
+    title={Training convergence},
+    xlabel={Training epochs},
+    ylabel={Training loss},
+    ymode=log,
+    xmin=0, xmax=2200,
+    xtick={0,500,1000,1500,2000,2500,2200},
+    scaled x ticks=false,
+    grid=both,
+    legend pos=south west,
+    legend cell align=left,
+]
+\pgfplotstableread[col sep=comma]{pinn_convergence.csv}\pinnconvergence
+% PINN
+\addplot[name path=pinnlower, draw=none, forget plot] table [x=epoch, y expr={max(1e-12, \thisrow{pinn_mean_loss}-\thisrow{pinn_std_loss})}] {\pinnconvergence};
+\addplot[name path=pinnupper, draw=none, forget plot] table [x=epoch, y expr={\thisrow{pinn_mean_loss}+\thisrow{pinn_std_loss}}] {\pinnconvergence};
+\addplot[black!12, forget plot] fill between[of=pinnlower and pinnupper];
+\addplot[black, line width=1.2pt, solid] table [x=epoch, y=pinn_mean_loss] {\pinnconvergence};
+\addlegendentry{PINN ($\mu \pm \sigma$)}
+\pgfplotstableread[col sep=comma]{nearest_convergence.csv}\nearestconvergence
+% rPINN: nearest neighbor
+\addplot[name path=nearestlower, draw=none, forget plot] table [x=epoch, y expr={max(1e-12, \thisrow{nearest_mean_loss}-\thisrow{nearest_std_loss})}] {\nearestconvergence};
+\addplot[name path=nearestupper, draw=none, forget plot] table [x=epoch, y expr={\thisrow{nearest_mean_loss}+\thisrow{nearest_std_loss}}] {\nearestconvergence};
+\addplot[black!25, forget plot] fill between[of=nearestlower and nearestupper];
+\addplot[black, line width=1.2pt, dashed] table [x=epoch, y=nearest_mean_loss] {\nearestconvergence};
+\addlegendentry{rPINN: nearest neighbor ($\mu \pm \sigma$)}
+\pgfplotstableread[col sep=comma]{linear_convergence.csv}\linearconvergence
+% rPINN: linear interpolation
+\addplot[name path=linearlower, draw=none, forget plot] table [x=epoch, y expr={max(1e-12, \thisrow{linear_mean_loss}-\thisrow{linear_std_loss})}] {\linearconvergence};
+\addplot[name path=linearupper, draw=none, forget plot] table [x=epoch, y expr={\thisrow{linear_mean_loss}+\thisrow{linear_std_loss}}] {\linearconvergence};
+\addplot[black!40, forget plot] fill between[of=linearlower and linearupper];
+\addplot[black, line width=1.2pt, densely dashed] table [x=epoch, y=linear_mean_loss] {\linearconvergence};
+\addlegendentry{rPINN: linear interpolation ($\mu \pm \sigma$)}
+\pgfplotstableread[col sep=comma]{spline_convergence.csv}\splineconvergence
+% rPINN: spline interpolation
+\addplot[name path=splinelower, draw=none, forget plot] table [x=epoch, y expr={max(1e-12, \thisrow{spline_mean_loss}-\thisrow{spline_std_loss})}] {\splineconvergence};
+\addplot[name path=splineupper, draw=none, forget plot] table [x=epoch, y expr={\thisrow{spline_mean_loss}+\thisrow{spline_std_loss}}] {\splineconvergence};
+\addplot[black!55, forget plot] fill between[of=splinelower and splineupper];
+\addplot[black, line width=1.2pt, dotted] table [x=epoch, y=spline_mean_loss] {\splineconvergence};
+\addlegendentry{rPINN: spline interpolation ($\mu \pm \sigma$)}
+\end{axis}
+\end{tikzpicture}
+\end{document}

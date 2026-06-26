@@ -1,0 +1,9 @@
+Interpolation method: spline
+Runs: 3
+Train time [s]: mean=3.080, std=0.156, min=2.966, max=3.258
+Epochs used: mean=1782.667, std=51.627, min=1748.000, max=1842.000
+Outlet MSE: mean=1.729461e-06, std=2.373343e-07, min=1.464358e-06, max=1.922161e-06
+Spatial MSE: mean=7.343308e-04, std=7.240078e-06, min=7.260215e-04, max=7.392822e-04
+Best loss: mean=1.995783e-05, std=2.256145e-08, min=1.994042e-05, max=1.998332e-05
+Reaction rate: mean=0.259897, std=0.00346309, min=0.255965, max=0.262495
+Reaction-rate abs. error: mean=9.896646e-03, std=3.463094e-03, min=5.965024e-03, max=1.249474e-02

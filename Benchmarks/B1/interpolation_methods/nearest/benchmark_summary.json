@@ -1,0 +1,85 @@
+{
+  "rPINN": {
+    "runs": 3,
+    "train_time_s": {
+      "mean": 4.211547515335648,
+      "std": 0.4465315134685517,
+      "min": 3.773561669004266,
+      "max": 4.666160241002217
+    },
+    "epochs_used": {
+      "mean": 2200.0,
+      "std": 0.0,
+      "min": 2200.0,
+      "max": 2200.0
+    },
+    "outlet_mse": {
+      "mean": 1.8088118925637293e-06,
+      "std": 1.6624372030650645e-07,
+      "min": 1.7091178960981779e-06,
+      "max": 2.000725089601474e-06
+    },
+    "spatial_mse": {
+      "mean": 0.0007596040959469974,
+      "std": 1.642306972712682e-05,
+      "min": 0.0007407182711176574,
+      "max": 0.0007705340976826847
+    },
+    "best_loss": {
+      "mean": 2.2669969742613223e-05,
+      "std": 2.4499839894672705e-06,
+      "min": 2.0222683815518394e-05,
+      "max": 2.5122642909991555e-05
+    },
+    "reaction_rate": {
+      "mean": 0.2517102062702179,
+      "std": 0.00012042715058323023,
+      "min": 0.25161612033843994,
+      "max": 0.25184592604637146
+    },
+    "reaction_rate_abs_error": {
+      "mean": 0.0017102062702178955,
+      "std": 0.00012042715058323023,
+      "min": 0.0016161203384399414,
+      "max": 0.00184592604637146
+    }
+  },
+  "config": {
+    "runs": 3,
+    "base_seed": 0,
+    "device": "cpu",
+    "num_delays": 30,
+    "reactor_length": 5.0,
+    "learning_rate": 0.001,
+    "phys_weight": 0.1,
+    "loss_mode": "strict_boundary_phys",
+    "pinn_epochs": 2200,
+    "pinn_threshold": 2e-05,
+    "pinn_patience": 100,
+    "rpinn_schedule": [
+      4,
+      20,
+      70,
+      100
+    ],
+    "rpinn_epochs": [
+      300,
+      400,
+      500,
+      1000
+    ],
+    "rpinn_thresholds": [
+      2e-05,
+      2e-05,
+      2e-05,
+      2e-05
+    ],
+    "rpinn_patience": 100,
+    "min_epochs_before_stop": 20,
+    "use_trainable_params": true,
+    "fixed_dispersion": 0.001,
+    "fixed_reaction_rate": 0.25,
+    "data_path": "Python/Data/flowReactorData.pkl",
+    "interpolation_method": "nearest"
+  }
+}

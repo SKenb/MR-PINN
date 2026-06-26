@@ -1,0 +1,4 @@
+method,train_time_mean,train_time_std,outlet_mse_mean,spatial_mse_mean,best_loss_mean,reaction_rate_abs_error_mean
+nearest,4.21155,0.446532,1.80881e-06,0.000759604,2.267e-05,0.00171021
+linear,3.03229,0.144753,1.76912e-06,0.000745354,1.9973e-05,0.00985085
+spline,3.07964,0.156468,1.72946e-06,0.000734331,1.99578e-05,0.00989665

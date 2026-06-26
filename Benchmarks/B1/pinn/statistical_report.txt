@@ -1,0 +1,9 @@
+PINN vs rPINN Statistical Report
+Columns: mean(PINN), mean(rPINN), diff=PINN-rPINN, p-value, Hedges g
+
+train_time_s: mean_pinn=3.93704, mean_rpinn=3.04794, diff=0.889095, p=0.00628294, g=5.47979, ci95=[0.51661, 1.26158] (scipy_t)
+epochs_used: mean_pinn=2200, mean_rpinn=1801.67, diff=398.333, p=0.013449, g=5.57551, ci95=[197.543, 599.124] (scipy_t)
+outlet_mse: mean_pinn=6.25946e-06, mean_rpinn=1.87066e-06, diff=4.3888e-06, p=0.07426, g=2.25659, ci95=[-1.06335e-06, 9.84095e-06] (scipy_t)
+spatial_mse: mean_pinn=0.00272895, mean_rpinn=0.000746906, diff=0.00198204, p=0.0141475, g=5.42523, ci95=[0.000956221, 0.00300787] (scipy_t)
+best_loss: mean_pinn=0.000180712, mean_rpinn=1.99642e-05, diff=0.000160748, p=0.00717974, g=7.66725, ci95=[0.000101825, 0.000219671] (scipy_t)
+reaction_rate_abs_error: mean_pinn=0.0776192, mean_rpinn=0.00938991, diff=0.0682293, p=0.00356466, g=6.08247, ci95=[0.0438117, 0.0926468] (scipy_t)

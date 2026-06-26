@@ -1,0 +1,316 @@
+{
+  "methods": {
+    "nearest": {
+      "method_dir": "Benchmarks/B1/interpolation_methods/nearest",
+      "summary_path": "Benchmarks/B1/interpolation_methods/nearest/benchmark_summary.json",
+      "reference_path": "Benchmarks/B1/interpolation_methods/stage_transition_reference.npz",
+      "summary": {
+        "rPINN": {
+          "runs": 3,
+          "train_time_s": {
+            "mean": 4.211547515335648,
+            "std": 0.4465315134685517,
+            "min": 3.773561669004266,
+            "max": 4.666160241002217
+          },
+          "epochs_used": {
+            "mean": 2200.0,
+            "std": 0.0,
+            "min": 2200.0,
+            "max": 2200.0
+          },
+          "outlet_mse": {
+            "mean": 1.8088118925637293e-06,
+            "std": 1.6624372030650645e-07,
+            "min": 1.7091178960981779e-06,
+            "max": 2.000725089601474e-06
+          },
+          "spatial_mse": {
+            "mean": 0.0007596040959469974,
+            "std": 1.642306972712682e-05,
+            "min": 0.0007407182711176574,
+            "max": 0.0007705340976826847
+          },
+          "best_loss": {
+            "mean": 2.2669969742613223e-05,
+            "std": 2.4499839894672705e-06,
+            "min": 2.0222683815518394e-05,
+            "max": 2.5122642909991555e-05
+          },
+          "reaction_rate": {
+            "mean": 0.2517102062702179,
+            "std": 0.00012042715058323023,
+            "min": 0.25161612033843994,
+            "max": 0.25184592604637146
+          },
+          "reaction_rate_abs_error": {
+            "mean": 0.0017102062702178955,
+            "std": 0.00012042715058323023,
+            "min": 0.0016161203384399414,
+            "max": 0.00184592604637146
+          }
+        },
+        "config": {
+          "runs": 3,
+          "base_seed": 0,
+          "device": "cpu",
+          "num_delays": 30,
+          "reactor_length": 5.0,
+          "learning_rate": 0.001,
+          "phys_weight": 0.1,
+          "loss_mode": "strict_boundary_phys",
+          "pinn_epochs": 2200,
+          "pinn_threshold": 2e-05,
+          "pinn_patience": 100,
+          "rpinn_schedule": [
+            4,
+            20,
+            70,
+            100
+          ],
+          "rpinn_epochs": [
+            300,
+            400,
+            500,
+            1000
+          ],
+          "rpinn_thresholds": [
+            2e-05,
+            2e-05,
+            2e-05,
+            2e-05
+          ],
+          "rpinn_patience": 100,
+          "min_epochs_before_stop": 20,
+          "use_trainable_params": true,
+          "fixed_dispersion": 0.001,
+          "fixed_reaction_rate": 0.25,
+          "data_path": "Python/Data/flowReactorData.pkl",
+          "interpolation_method": "nearest"
+        }
+      }
+    },
+    "linear": {
+      "method_dir": "Benchmarks/B1/interpolation_methods/linear",
+      "summary_path": "Benchmarks/B1/interpolation_methods/linear/benchmark_summary.json",
+      "reference_path": null,
+      "summary": {
+        "rPINN": {
+          "runs": 3,
+          "train_time_s": {
+            "mean": 3.0322883146679183,
+            "std": 0.1447533201625749,
+            "min": 2.9063225599966245,
+            "max": 3.1904184209997766
+          },
+          "epochs_used": {
+            "mean": 1797.0,
+            "std": 89.44830909525345,
+            "min": 1716.0,
+            "max": 1893.0
+          },
+          "outlet_mse": {
+            "mean": 1.769121619569584e-06,
+            "std": 3.759542456802076e-07,
+            "min": 1.385652012686478e-06,
+            "max": 2.137080400643754e-06
+          },
+          "spatial_mse": {
+            "mean": 0.0007453540068430206,
+            "std": 1.3621701172839973e-05,
+            "min": 0.0007296347757801414,
+            "max": 0.0007536932826042175
+          },
+          "best_loss": {
+            "mean": 1.997298507679564e-05,
+            "std": 2.8899795802059324e-08,
+            "min": 1.993961450352799e-05,
+            "max": 1.998971310968045e-05
+          },
+          "reaction_rate": {
+            "mean": 0.2598508497079213,
+            "std": 0.00497144885757123,
+            "min": 0.2548227608203888,
+            "max": 0.26476365327835083
+          },
+          "reaction_rate_abs_error": {
+            "mean": 0.009850849707921347,
+            "std": 0.00497144885757123,
+            "min": 0.004822760820388794,
+            "max": 0.01476365327835083
+          }
+        },
+        "config": {
+          "runs": 3,
+          "base_seed": 0,
+          "device": "cpu",
+          "num_delays": 30,
+          "reactor_length": 5.0,
+          "learning_rate": 0.001,
+          "phys_weight": 0.1,
+          "loss_mode": "strict_boundary_phys",
+          "pinn_epochs": 2200,
+          "pinn_threshold": 2e-05,
+          "pinn_patience": 100,
+          "rpinn_schedule": [
+            4,
+            20,
+            70,
+            100
+          ],
+          "rpinn_epochs": [
+            300,
+            400,
+            500,
+            1000
+          ],
+          "rpinn_thresholds": [
+            2e-05,
+            2e-05,
+            2e-05,
+            2e-05
+          ],
+          "rpinn_patience": 100,
+          "min_epochs_before_stop": 20,
+          "use_trainable_params": true,
+          "fixed_dispersion": 0.001,
+          "fixed_reaction_rate": 0.25,
+          "data_path": "Python/Data/flowReactorData.pkl",
+          "interpolation_method": "linear"
+        }
+      }
+    },
+    "spline": {
+      "method_dir": "Benchmarks/B1/interpolation_methods/spline",
+      "summary_path": "Benchmarks/B1/interpolation_methods/spline/benchmark_summary.json",
+      "reference_path": null,
+      "summary": {
+        "rPINN": {
+          "runs": 3,
+          "train_time_s": {
+            "mean": 3.079643538328431,
+            "std": 0.15646767532007844,
+            "min": 2.96604712298722,
+            "max": 3.258113534990116
+          },
+          "epochs_used": {
+            "mean": 1782.6666666666667,
+            "std": 51.62686639079824,
+            "min": 1748.0,
+            "max": 1842.0
+          },
+          "outlet_mse": {
+            "mean": 1.7294605261971203e-06,
+            "std": 2.3733433607476188e-07,
+            "min": 1.4643575241279905e-06,
+            "max": 1.9221608908992494e-06
+          },
+          "spatial_mse": {
+            "mean": 0.0007343308340447644,
+            "std": 7.240077790386961e-06,
+            "min": 0.000726021477021277,
+            "max": 0.0007392821717076004
+          },
+          "best_loss": {
+            "mean": 1.9957831682404503e-05,
+            "std": 2.2561452652043132e-08,
+            "min": 1.994041849684436e-05,
+            "max": 1.9983319361926988e-05
+          },
+          "reaction_rate": {
+            "mean": 0.2598966459433238,
+            "std": 0.003463094372404591,
+            "min": 0.2559650242328644,
+            "max": 0.2624947428703308
+          },
+          "reaction_rate_abs_error": {
+            "mean": 0.00989664594332377,
+            "std": 0.0034630943724045906,
+            "min": 0.00596502423286438,
+            "max": 0.01249474287033081
+          }
+        },
+        "config": {
+          "runs": 3,
+          "base_seed": 0,
+          "device": "cpu",
+          "num_delays": 30,
+          "reactor_length": 5.0,
+          "learning_rate": 0.001,
+          "phys_weight": 0.1,
+          "loss_mode": "strict_boundary_phys",
+          "pinn_epochs": 2200,
+          "pinn_threshold": 2e-05,
+          "pinn_patience": 100,
+          "rpinn_schedule": [
+            4,
+            20,
+            70,
+            100
+          ],
+          "rpinn_epochs": [
+            300,
+            400,
+            500,
+            1000
+          ],
+          "rpinn_thresholds": [
+            2e-05,
+            2e-05,
+            2e-05,
+            2e-05
+          ],
+          "rpinn_patience": 100,
+          "min_epochs_before_stop": 20,
+          "use_trainable_params": true,
+          "fixed_dispersion": 0.001,
+          "fixed_reaction_rate": 0.25,
+          "data_path": "Python/Data/flowReactorData.pkl",
+          "interpolation_method": "spline"
+        }
+      }
+    }
+  },
+  "config": {
+    "runs": 3,
+    "base_seed": 0,
+    "device": "cpu",
+    "num_delays": 30,
+    "reactor_length": 5.0,
+    "learning_rate": 0.001,
+    "phys_weight": 0.1,
+    "loss_mode": "strict_boundary_phys",
+    "pinn_epochs": 2200,
+    "pinn_threshold": 2e-05,
+    "pinn_patience": 100,
+    "rpinn_schedule": [
+      4,
+      20,
+      70,
+      100
+    ],
+    "rpinn_epochs": [
+      300,
+      400,
+      500,
+      1000
+    ],
+    "rpinn_thresholds": [
+      2e-05,
+      2e-05,
+      2e-05,
+      2e-05
+    ],
+    "rpinn_patience": 100,
+    "min_epochs_before_stop": 20,
+    "use_trainable_params": true,
+    "fixed_dispersion": 0.001,
+    "fixed_reaction_rate": 0.25,
+    "data_path": "Python/Data/flowReactorData.pkl",
+    "methods": [
+      "nearest",
+      "linear",
+      "spline"
+    ]
+  }
+}

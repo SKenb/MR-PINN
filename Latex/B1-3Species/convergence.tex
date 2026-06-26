@@ -1,0 +1,120 @@
+
+\documentclass[tikz,border=3pt]{standalone}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\begin{axis}[
+    width=15.5cm,
+    height=8.2cm,
+    title={Training convergence},
+    xlabel={Training epochs},
+    ylabel={Training loss},
+    ymode=log,
+    xmin=0,
+    xmax=2250,
+    xtick={0,250,500,750,1000,1250,1500,1750,2000,2250},
+    scaled x ticks=false,
+    grid=both,
+    legend pos=south west,
+    legend cell align=left,
+]
+
+\pgfplotstableread[col sep=comma]
+{../../Benchmarks/B1-3Species/convergence_tikz_data.csv}
+\convergence
+
+% =========================================================
+% PINN
+% =========================================================
+
+\addplot[
+    name path=pinnlower,
+    draw=none,
+    forget plot
+]
+table[
+    x expr=\thisrow{normalized_progress}*2250,
+    y expr=\thisrow{pinn_mean_loss}-\thisrow{pinn_std_loss}
+] {\convergence};
+
+\addplot[
+    name path=pinnupper,
+    draw=none,
+    forget plot
+]
+table[
+    x expr=\thisrow{normalized_progress}*2250,
+    y expr=\thisrow{pinn_mean_loss}+\thisrow{pinn_std_loss}
+] {\convergence};
+
+\addplot[
+    blue!20,
+    forget plot
+]
+fill between[of=pinnlower and pinnupper];
+
+\addplot[
+    blue,
+    thick
+]
+table[
+    x expr=\thisrow{normalized_progress}*2250,
+    y=pinn_mean_loss
+] {\convergence};
+
+\addlegendentry{PINN ($\mu \pm \sigma$)}
+
+% =========================================================
+% rPINN
+% =========================================================
+
+\addplot[
+    name path=rpinnlower,
+    draw=none,
+    forget plot
+]
+table[
+    x expr=\thisrow{normalized_progress}*2250,
+    y expr=\thisrow{rpinn_mean_loss}-\thisrow{rpinn_std_loss}
+] {\convergence};
+
+\addplot[
+    name path=rpinnupper,
+    draw=none,
+    forget plot
+]
+table[
+    x expr=\thisrow{normalized_progress}*2250,
+    y expr=\thisrow{rpinn_mean_loss}+\thisrow{rpinn_std_loss}
+] {\convergence};
+
+\addplot[
+    red!20,
+    forget plot
+]
+fill between[of=rpinnlower and rpinnupper];
+
+\addplot[
+    red,
+    thick
+]
+table[
+    x expr=\thisrow{normalized_progress}*2250,
+    y=rpinn_mean_loss
+] {\convergence};
+
+\addlegendentry{MR-PINN ($\mu \pm \sigma$)}
+
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}
