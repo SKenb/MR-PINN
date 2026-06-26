@@ -95,6 +95,8 @@ After the benchmark, generate the combined TikZ convergence figure with:
 Build the LaTeX plots in `Latex/B1`.
 
 
+
+
 ## Run 3-Species Benchmarks
 
 Same-network-epochs 3-species benchmark with `n = 30` runs:
@@ -112,4 +114,8 @@ After the benchmark, generate the combined TikZ convergence figure with:
     --output-dir Latex/B1-3Species \
     --pinn-epochs 2250 \
     --rpinn-epochs 2250
+
+Sample convergence figure from the 3-species example:
+
+![3-species convergence sample](Latex/B1-3Species/convergence.png)
     
