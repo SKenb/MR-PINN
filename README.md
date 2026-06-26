@@ -1,3 +1,11 @@
+# MR-PINN: Multiresolution Physics-Informed Neural Networks
+
+![MR-PINN Logo](Images/MR-PINN.png)
+
+MR-PINN is a multiresolution training framework for Physics-Informed Neural Networks (PINNs) that accelerates convergence through adaptive resolution refinement and solution-guided upscaling. The method progressively trains PINNs on increasingly finer spatial resolutions, transferring learned solutions between levels via interpolation. This continuation strategy improves both training efficiency and predictive accuracy for PDE-governed distributed parameter systems. The repository includes implementations and examples for flow reactor case studies demonstrating the effectiveness of the proposed approach.
+
+
+
 ## Setup Python Environment
 
     python3 -m venv .venv
