@@ -83,6 +83,18 @@ Same-network-epochs 1-species benchmark with `n = 30` runs and 2,200 total epoch
     --rpinn-patience 100 \
     --methods nearest,linear,spline
 
+    cd Python
+    python3 A3_PINN_VS_rPINN_random_init_compare.py \
+    --runs 30 \
+    --base-seed 0 \
+    --data-path ./Data/flowReactorData.pkl \
+    --output-root ./Data/rpinn_benchmark_1species_random_init_compare \
+    --rpinn-schedule 4,20,70,100 \
+    --rpinn-epochs 300,400,500,1000 \
+    --rpinn-thresholds 2e-5,2e-5,2e-5,2e-5 \
+    --rpinn-patience 20 \
+    --device cpu
+
 After the benchmark, generate the combined TikZ convergence figure with:
 
     python3 Python/make_tikz_convergence_4methods.py \
